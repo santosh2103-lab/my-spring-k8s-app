@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: spring-app-service
 spec:
-  type: LoadBalancer # This makes it available at localhost:8081
+  type: LoadBalancer # This makes it available at localhost:8081's
   ports:
     - port: 8081
       targetPort: 8080
