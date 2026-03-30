@@ -18,9 +18,7 @@ pipeline {
         }
         stage('Deploy to K8s') {
             steps {
-                // Docker Desktop context is usually already set
-                sh "kubectl apply -f k8s/deployment.yaml"
-                sh "kubectl set image deployment/spring-app-deploy spring-app-container=${IMAGE_NAME}:${TAG}"
+                sh "kubectl apply -f k8s/deployment.yaml --insecure-skip-tls-verify"
             }
         }
     }
